@@ -4,6 +4,18 @@ print("Hello World")
 nev = input("Add meg a neved:")
 print("Udvozollek,"+nev)
 
-a=input("a oldal hossza:")
+a=input('a oldal hossza:')
+#type(a)
 b=input("b oldal hossza:")
-print(a,b)
+#type(b)
+
+t=int(a)*int(b)
+print("A négyzet területe:"+str(t))
+k=2*(int(a)+int(b))
+print("A négyzet kerülete:"+str(k))
+
+szam=input('Adjon meg egy számot:')
+if int(szam)>0 :
+    print('a szám pozitív')
+elif int(szam)<0 :
+    print('a szám negatív')
