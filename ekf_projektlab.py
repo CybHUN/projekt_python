@@ -8,6 +8,7 @@ print("6 - Páros/Páratlan meghatározó")
 print("7 - Síknegyed meghatározó")
 print("8 - Alap While ciklus (számok 1-10-ig)")
 print("9 - Alap for ciklus (páros számok 0-100-ig")
+print("10 - Prím Szám meghatározása")
 print("------------------------------------------------")
 print("0 - Kilépés")
 valasztas=input("Választásom:")
@@ -98,3 +99,16 @@ elif(muvelet == 9):
     print("For ciklus használata, páros számok kiíratása 0-20-ig")
     for i in range(11):
         print (i*2)
+        
+elif(muvelet == 10):
+    #Prímszám vagy nem prímszám meghatározása for ciklusokkal    
+    print ("Prímszám vagy nem prímszám")
+    num = int(input("Add meg a maximumot: "))
+    
+    for n in range(2, num+1):
+     for x in range(2, n):
+         if n % x == 0:
+            print (n, "nem prím mert", x, "*", n/x)
+            break
+     else:
+          print (n, "Ez egy prímszám")
