@@ -1,3 +1,4 @@
+﻿#somieri itt 
 print ("Üdvözöllek a programban kérjük válassz milyen programot akarsz futtatni")
 print("1 - Hello World")
 print("2 - köszönő program")
