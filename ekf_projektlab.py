@@ -1,3 +1,5 @@
+﻿#somieri itt 
+#megint
 print ("Üdvözöllek a programban kérjük válassz milyen programot akarsz futtatni")
 print("1 - Hello World")
 print("2 - köszönő program")
@@ -9,6 +11,7 @@ print("7 - Síknegyed meghatározó")
 print("8 - Alap While ciklus (számok 1-10-ig)")
 print("9 - Alap for ciklus (páros számok 0-100-ig")
 print("10 - Prím Szám meghatározása")
+print("11 - Háromszög szerkeszthetősége")
 print("------------------------------------------------")
 print("0 - Kilépés")
 valasztas=input("Választásom:")
@@ -112,3 +115,13 @@ elif(muvelet == 10):
             break
      else:
           print (n, "Ez egy prímszám")
+elif(muvelet == 11):
+    # Háromszög szerkeszthetőség vizsgálata
+    print ("A háromszög szerkeszthető?")
+    a = int(input("Add meg az a oldalt:"))
+    b = int (input("Add meg az b oldalt:"))
+    c = int (input("Add meg az c oldalt:"))
+    if ((a + b > c) & (a + c > b) & (b + c > a)):
+        print ("A háromszög szerkeszthető!")
+    else:
+        print ("A háromszög nem szerkeszthető!")
