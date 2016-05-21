@@ -1,5 +1,84 @@
+﻿#somieri4
+<<<<<<< HEAD
+#Egyszerű függvények I: összeadás
+def osszeadas(a,b):
+    osszeg=a+b
+    return osszeg
+#Egyszerű függvények I: kivonás
+def kivonas(a,b):
+    kulonbseg=a-b
+    return kulonbseg
+#Egyszerű függvények I: szorzat
+def szorzas(a,b):
+    szorzat=a*b
+    return szorzat
+#Egyszerű függvények I: osztás
+def osztas(a,b):
+    hanyados=a/b
+    return hanyados
+#Random szám generáló függvény
+def rand(also,felso):
+    import random
+    randomszam=random.randint(also,felso)
+    return randomszam
+#Lista feltöltő függvény
+def lista_feltolto(meret):
+    lista=[]
+    szamlalo = 0
+    while szamlalo < meret:
+        lista.append(rand(1,100))
+        szamlalo = szamlalo + 1
+    return lista
+#Lista kiírató függvény
+def lista_kiirato(kiirando_lista,meret):
+    for i in range(meret):
+        print (kiirando_lista[i],",", end="")
+#Összegzés tétele függvénnyel
+def osszegzes(meret):
+    osszeg=0
+    osszeg_lista=lista_feltolto(meret)
+    for i in range(meret):
+        print (osszeg_lista[i],",", end="")
+        osszeg=osszeg+osszeg_lista[i]
+    print ("\nA lista elemeiek összege:",osszeg)
+#Összegzés tétele függvénnyel
+def atlagszamitas(meret):
+    osszeg=0
+    atlag_lista=lista_feltolto(meret)
+    for i in range(meret):
+        print (atlag_lista[i],",", end="")
+        osszeg=osszeg+atlag_lista[i]
+    print ("\nA lista elemeiek átlaga:",osszeg/meret)
+#Megszámlálás tétele függvénnyel
+def megszamlalas(meret):
+    db=0
+    megszamlalando_lista=lista_feltolto(meret)
+    for i in range(meret):
+        if (int(megszamlalando_lista[i]) % 2 == 0):
+            db=db+1            
+        print (megszamlalando_lista[i],",", end="")
+    print ("\nA lista páros elemeiek száma:",db)
+#Minimumkiválasztás tétele függvénnyel
+def minimumkivalasztas(meret):
+    minimumkivalasztos_lista=lista_feltolto(meret)
+    min=minimumkivalasztos_lista[0]
+    for i in range(meret):
+        if (minimumkivalasztos_lista[i]<min):
+            min=minimumkivalasztos_lista[i]         
+        print (minimumkivalasztos_lista[i],",", end="")
+    print ("\nA legkisebb elem:",min)
+#Maximumkiválasztás tétele függvénnyel
+def maximumkivalasztas(meret):
+    maximumkivalasztos_lista=lista_feltolto(meret)
+    max=maximumkivalasztos_lista[0]
+    for i in range(meret):
+        if (maximumkivalasztos_lista[i]>max):
+            max=maximumkivalasztos_lista[i]         
+        print (maximumkivalasztos_lista[i],",", end="")
+    print ("\nA legnagyobb elem:",max)
+=======
 ﻿#somieri itt 
-#megint
+>>>>>>> origin/master
 print ("Üdvözöllek a programban kérjük válassz milyen programot akarsz futtatni")
 print("1 - Hello World")
 print("2 - köszönő program")
@@ -12,6 +91,16 @@ print("8 - Alap While ciklus (számok 1-10-ig)")
 print("9 - Alap for ciklus (páros számok 0-100-ig")
 print("10 - Prím Szám meghatározása")
 print("11 - Háromszög szerkeszthetősége")
+print("12 - Egyszerű összeadás függvénnyel")
+print("13 - A négy alapművelet függvénnyel")
+print("14 - Random szám generálás függvénnyel 1-100")
+print("15 - Random szám generálás függvénnyel beállítható")
+print("16 - Tömb feltöltése és tömb elemeinek kiíratása függvénnyel")
+print("17 - Összegzés tétele függvénnyel")
+print("18 - Átlagszámítás tétele függvénnyel")
+print("19 - Megszámlálás tétele függvénnyel")
+print("20 - Minimum kiválasztás tétele függvénnyel")
+print("21 - Maximum kiválasztás tétele függvénnyel")
 print("------------------------------------------------")
 print("0 - Kilépés")
 valasztas=input("Választásom:")
@@ -72,20 +161,20 @@ elif(muvelet == 7):
     y_koordinata=input("Add meg az y koordináta értékét: ")
     x=int(x_koordinata)
     y=int(y_koordinata)
-    if (x > 0 & y > 0):
+    if (x > 0 | y > 0):
         print("A pont az első síknegyedben van.")
-    elif (x < 0 & y > 0):
+    elif (x < 0 | y > 0):
         print("A pont az második síknegyedben van.")
-    elif (x < 0 & y < 0):
+    elif (x < 0 | y < 0):
         print("A pont az harmadik síknegyedben van.")
-    elif (x > 0 & y < 0):
+    elif (x > 0 | y < 0):
         print("A pont az megyedik síknegyedben van.")
+    elif (x==0 | y==0) :
+        print("A pont az origoban van.")
     elif (x==0) :
         print("A pont az y tengelyen van.")
     elif (y==0) :
         print("A pont az x tengelyen van.")
-    elif (x==0 & y==0) :
-        print("A pont az origoban van.")
     else:
         print("Ilyen pont nem létezik")
 
@@ -125,3 +214,42 @@ elif(muvelet == 11):
         print ("A háromszög szerkeszthető!")
     else:
         print ("A háromszög nem szerkeszthető!")
+elif(muvelet == 12):
+    # Két szám összeadása függvény segítségével
+    elso_szam = int(input("Add meg az első számot:"))
+    masodik_szam = int (input("Add meg a második számok:"))
+    print ("az összeadás eserménye",osszeadas(elso_szam,masodik_szam))
+elif(muvelet == 13):
+    # Négy alapművelet elkészítése függvény segítségével
+    elso_szam = int(input("Add meg az első számot:"))
+    masodik_szam = int (input("Add meg a második számok:"))
+    print ("Az összeadás eredménye",osszeadas(elso_szam,masodik_szam))
+    print ("A kivonás eredménye",kivonas(elso_szam,masodik_szam))
+    print ("A szorzás eredménye",szorzas(elso_szam,masodik_szam))
+    print ("Az osztás eredménye",osztas(elso_szam,masodik_szam))
+elif(muvelet == 14):
+    #egyszerű random szám generálása 1 és 100 között
+    print ("A generált random szám:",rand(1,100))
+elif(muvelet == 15):    
+    #random szám generálása az álltalunk megadott intervallumban
+    hatar_egy = int(input("Add meg az első számot:"))
+    hatar_ketto = int (input("Add meg a második számok:"))
+    print ("A generált random szám:",rand(hatar_egy,hatar_ketto))
+elif(muvelet == 16):
+    lista_meret = int(input("Hány elemű tömböt hozzak létre?:"))
+    lista_kiirato(lista_feltolto(lista_meret),lista_meret);
+elif(muvelet == 17):
+    elemszam = int (input("Hány elemű tömbnek adjuk össze az elemeit:"))
+    osszegzes(elemszam);
+elif(muvelet == 18):
+    elemszam = int (input("Hány elemű tömbnek számoljuk ki az áltagás:"))
+    atlagszamitas(elemszam);    
+elif(muvelet == 19):
+    elemszam = int (input("Hány elemű tömbben adjuk meg a páros számok számát:"))
+    megszamlalas(elemszam); 
+elif(muvelet == 20):
+    elemszam = int (input("Hány elemű tömbben adjuk meg a minimumát:"))
+    minimumkivalasztas(elemszam); 
+elif(muvelet == 21):
+    elemszam = int (input("Hány elemű tömbben adjuk meg a maximumát:"))
+    maximumkivalasztas(elemszam);
