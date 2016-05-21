@@ -1,4 +1,4 @@
-﻿#somieri3
+﻿#somieri4
 <<<<<<< HEAD
 #Egyszerű függvények I: összeadás
 def osszeadas(a,b):
