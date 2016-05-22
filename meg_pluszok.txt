@@ -1,0 +1,6 @@
+Az újonnan hozzárakott részek somieritõl:
+22: lnko
+23: számtani vagy mértani sorozat-e
+24: faktoriális for ciklussal
+25: két szám közül a nagyobb
+26: binomiális együttható rekurzív

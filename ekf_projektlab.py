@@ -1,5 +1,5 @@
 ﻿#somieri
-<<<<<<< HEAD
+#<<<<<<< HEAD
 #Egyszerű függvények I: összeadás
 def osszeadas(a,b):
     osszeg=a+b
@@ -76,9 +76,13 @@ def maximumkivalasztas(meret):
             max=maximumkivalasztos_lista[i]         
         print (maximumkivalasztos_lista[i],",", end="")
     print ("\nA legnagyobb elem:",max)
-=======
-﻿#somieri itt 
->>>>>>> origin/master
+#binomiális együttható kiszámítása
+def binomialis(m,k):
+    if ((k==0) | (k==m)):
+        return 1
+    else:
+        return binomialis(m-1,k)+binomialis(m-1,k-1)
+#=======
 print ("Üdvözöllek a programban kérjük válassz milyen programot akarsz futtatni")
 print("1 - Hello World")
 print("2 - köszönő program")
@@ -101,6 +105,11 @@ print("18 - Átlagszámítás tétele függvénnyel")
 print("19 - Megszámlálás tétele függvénnyel")
 print("20 - Minimum kiválasztás tétele függvénnyel")
 print("21 - Maximum kiválasztás tétele függvénnyel")
+print("22 - Legnagyobb közös osztót meghatározó program")
+print("23 - Számtani vagy mértani sorozat-e?")
+print("24 - faktoriális for ciklussal")
+print("25 - két szám közül a nagyobb meghatározása")
+print("26 - binomiális együttható kiszámítása")
 print("------------------------------------------------")
 print("0 - Kilépés")
 valasztas=input("Választásom:")
@@ -253,3 +262,60 @@ elif(muvelet == 20):
 elif(muvelet == 21):
     elemszam = int (input("Hány elemű tömbben adjuk meg a maximumát:"))
     maximumkivalasztas(elemszam);
+elif(muvelet==22):
+    print("Legnagyobb közös osztót meghatározó program")
+    ea=int(input("Egyik szám: "))
+    eb=int(input("Másik szám: "))
+    eaa=int(ea)
+    ebb=int(eb)
+    if eaa<ebb:
+        es=ea;
+        ea=eb;
+        eb=es;
+        em=ea%eb
+    while em>0:
+        ea=eb
+        eb=em
+        em=ea%eb
+    print("A legnagyobb közös osztó:"+str(eb))  
+elif(muvelet==23):
+    print("23 - Számtani vagy mértani sorozat-e?")
+    sa1=int(input("a1 értéke: "))
+    sa2=int(input("a2 értéke: "))
+    sa3=int(input("a3 értéke: "))
+    if((sa2-sa1)==(sa3-sa2)):
+        print("számtani sorozat")
+    elif((sa2/sa1)==(sa3/sa2)):
+        print("mértani sorozat")
+    else:
+        print("egyik sem")
+elif(muvelet==24):
+    print("24 - faktoriális for ciklussal")
+    fn=int(input("n értéke: "))
+    if fn<0:
+        print("n nem lehet nulla")
+    elif fn==0:
+        print('n faktoriálisa: 0')
+    else:
+        fe=1
+        for i in range(1,fn+1):
+            fe=fe*i
+        print("n érétke:"+str(fe))
+elif(muvelet==25):
+    print("25 - két szám közül a nagyobb meghatározása")
+    na=int(input("egyik szám: "))
+    nb=int(input("másik szám: "))
+    if na<nb:
+        print("nagyobbik szám:"+str(nb))
+    elif na>nb:
+        print("nagyobbik szám"+str(na))
+    else:
+        print("a két szám egyenlő")
+elif(muvelet==26):
+    print("26 - binomiális együttható kiszámítása")
+    k_ertek=int(input("adja meg k értékét: "))
+    n_ertek=int(input("adja n értékét: "))
+    if k_ertek>n_ertek:
+        print("k nem lehet nagyobb n-nél")
+    else:
+        print("n alatt a k: ",binomialis(n_ertek,k_ertek))
